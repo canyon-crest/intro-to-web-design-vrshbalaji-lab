@@ -1,5 +1,5 @@
 body {
-    background-color: #8b7a3e;
+    background-color: #9e8545;
     color: #2f0505;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0px;
@@ -30,6 +30,7 @@ h2 {
     margin: 10px auto;
     border-radius: 30px;
 }
+
 p{
     line-height: 2.25em;
 }
@@ -44,6 +45,7 @@ img {
 
 #guitarpic {
     float: right;
+    margin-left: 20px;
 }
 
 .highlight {
@@ -67,12 +69,14 @@ img:hover {
 }
 
 #sidebar {
-    background-color: gold;
-    border: solid white 3px;
+    background-color: #f7dd7f;
+    border: solid #5e4b06 3px;
     padding: 10px;
-    width: 170px;
+    width: 185px;
     float: right;
     margin-left: 20px;
+    border-radius: 9px;
+    text-align: left;
 }
 
 #sidebar h3 {
@@ -82,8 +86,79 @@ img:hover {
 }
 
 ul{
-    line-height: 1.75em;
+    line-height: 1.5em;
 }
+
+/*above and beyond "3D" card flip styles*/
+
+/*flexbox to make them all on the same line*/
+#all-side-notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 10px;
+}
+/* creates the 3D space */
+#side-note-container {
+  width: 180px;
+  height: 200px;
+  perspective: 1000px; /* Essential for the 3D depth effect */
+  margin: 20px;
+  margin-right: 20px;
+}
+
+/* flipping it over */
+#side-note-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; /* Tells child elements to stay in 3D space */
+  cursor: pointer;
+}
+
+/* hovering causes it to flip over */
+#side-note-container:hover #side-note-card {
+  transform: rotateY(180deg);
+}
+
+/* styles */
+#side-note-front, #side-note-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Hides the back side when flipped */
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* styles just for the front */
+#side-note-front {
+  background-color: #fff9c4; /* Pale Yellow */
+  color: #333;
+  border: 3px solid #fbc02d;
+}
+
+/* styles just for the back */
+#side-note-back {
+  background-color: #fbc02d; /* Brighter Yellow */
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+
+
+/*media queries below*/
 
 @media (max-width:1200px){
     #container{
@@ -98,11 +173,6 @@ ul{
         border:none;
     }
 }
-
-body{
-    padding:5px;
-}
-
 @media (max-width: 768px){
     #sidebar{
         display:none;
