@@ -1,5 +1,5 @@
 body {
-    background-color: #9e8545;
+    background-color: #A27649;
     color: #2f0505;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0px;
@@ -11,7 +11,7 @@ body {
     padding: 30px;
     width: 900px;
     margin: 0 auto;
-    border: solid 5px #f7dd7f;
+    border: solid 3px #5e4b06;
 }
 h1 {
     color: #FFFFFF;
@@ -23,7 +23,7 @@ h1 {
 }
 h2 {
     color: #5e4b06;
-    background-color: #f7dd7f;
+    background-color: #f7df7f;
     border: solid 3px #5e4b06;
     padding: 5px;
     text-align: center;
@@ -49,7 +49,7 @@ img {
 }
 
 .highlight {
-    background-color: #ffe586;
+    background-color: #f7df7f;
 }
 a:link {
     color: #ca8310;
@@ -69,7 +69,7 @@ img:hover {
 }
 
 #sidebar {
-    background-color: #f7dd7f;
+    background-color: #f7df7f;
     border: solid #5e4b06 3px;
     padding: 10px;
     width: 185px;
@@ -146,12 +146,12 @@ ul{
 #side-note-front {
   background-color: #fff9c4; /* Pale Yellow */
   color: #333;
-  border: 3px solid #fbc02d;
+  border: 3px solid #e0a546;
 }
 
 /* styles just for the back */
 #side-note-back {
-  background-color: #fbc02d; /* Brighter Yellow */
+  background-color: #e0a546; /* Brighter Yellow */
   color: #fff;
   transform: rotateY(180deg);
 }
